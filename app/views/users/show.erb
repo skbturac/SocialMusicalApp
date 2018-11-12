@@ -1,0 +1,12 @@
+<h1>User Profile</h1>
+
+<body>
+  Name: <%=@user.name%> <br>
+  <br>
+  Email Address: <%=@user.email%> <br>
+  <br>
+</body>
+ <br>
+<p> <%= link_to "Go Back", users_path %> </p>
+<p> <%= link_to "Edit User", edit_user_path %> </p>
+<p> <%= link_to "Delete User Profile", @user, method: :delete, data: {confirm: "Really?"} %> </p>
