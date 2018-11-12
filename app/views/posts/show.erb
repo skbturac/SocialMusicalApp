@@ -1,0 +1,12 @@
+<h1>Post</h1>
+
+<body>
+  Title: <%=@post.title%> <br>
+  <br>
+  Content: <%=@post.content%> <br>
+  <br>
+</body>
+ <br>
+<p> <%= link_to "Go Back", posts_path %> </p>
+<p> <%= link_to "Edit Post", edit_post_path %> </p>
+<p> <%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Really?"} %> </p>

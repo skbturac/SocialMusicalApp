@@ -1,0 +1,14 @@
+<h1>Comments Index</h1>
+
+<p>Number of Comments: <%= @comments.count %></p>
+
+<body>
+  <% @comments.each do |a| %> <br>
+  Text: <%= a.text %> <br>
+  <br>
+  <%= link_to "View the Comment", comment_path(a) %><br>
+  -------------------------------------
+  <br>
+  <% end %>
+    <p> <%= link_to "Add New Comment", new_comment_path %> </p>
+</body>
