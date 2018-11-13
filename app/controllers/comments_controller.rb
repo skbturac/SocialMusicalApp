@@ -21,11 +21,11 @@ class CommentsController < ApplicationController
       @post = Post.find_by(id: params[:post_id])
 
       @comment = @post.comments.build(comment_params)
-      
+
       @comment.user = current_user
       if @comment.save
         flash[:notice] = "Successfully created..."
-       redirect_to user_path(@user)
+       redirect_to user_path(current_user)
       else
        flash[:alert] = "failed"
        redirect_to root_path
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
     end
 
     def edit
-      @post = Post.find(params[:post_id])
+      @post = Post.find_by(id: params[:post_id])
       @comment = @post.comments.find(id: params[:id])
     end
 
