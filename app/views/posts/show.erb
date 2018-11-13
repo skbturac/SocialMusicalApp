@@ -5,7 +5,7 @@
   <br>
   Content: <%=@post.content%> <br>
   <br>
-  
+  <%= render partial: 'comments/form', locals: { comment: @comment } %>
 </body>
  <br>
 <p> <%= link_to "Go Back", posts_path %> </p>

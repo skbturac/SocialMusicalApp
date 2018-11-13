@@ -1,21 +1,27 @@
 class CommentsController < ApplicationController
-  before_action :find_comment, only: [:show, :edit, :update, :destroy]
+  before_action :find_comment, only: [:show, :update, :destroy]
 
     def index
       @comments = Comment.all
     end
 
     def show
+
     end
 
     def new
-      @comment = Comment.new
+      # @comment = Comment.new
+      # @post = Post.find_by(id: params[:id])
+      # @comment = Comment.new(id: params[:id])
+      @comment = Comment.new(post_id: params[:post_id])
     end
 
     def create
 
-      @post = Post.find_by(id: params[:id])
+      @post = Post.find_by(id: params[:post_id])
+
       @comment = @post.comments.build(comment_params)
+      
       @comment.user = current_user
       if @comment.save
         flash[:notice] = "Successfully created..."
@@ -24,11 +30,11 @@ class CommentsController < ApplicationController
        flash[:alert] = "failed"
        redirect_to root_path
       end
-
     end
 
     def edit
-      #code
+      @post = Post.find(params[:post_id])
+      @comment = @post.comments.find(id: params[:id])
     end
 
     def update
@@ -37,6 +43,7 @@ class CommentsController < ApplicationController
       else
        flash[:alert] = "Failed to update"
      end
+    end
 
      def destroy
       @comment.destroy
