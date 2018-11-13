@@ -9,6 +9,9 @@
     <%= f.text_field :content %>
   <br>
   <br>
+    <%= f.collection_select(:user_id, User.all, :id, :name) %>
+  <br>
+  <br>
     <%= f.submit %>
   <% end %>
 </ol>
