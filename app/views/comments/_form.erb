@@ -1,10 +1,10 @@
-<ol>
-  <%= form_for @comment do |f| %>
 
-    <%= f.label :text %>
-    <%= f.text_field :text %>
-  <br>
-  <br>
-    <%= f.submit %>
-  <% end %>
-</ol>
+<!-- I think we should do a nested form to allow for someone to write their name? Either whatever they want or a username, bc we can't ask a user for their ID -->
+
+<%= form_for @comment do |f| %>
+
+      <%= f.text_area :text, placeholder: "Compose new comment..." %>
+<br>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+<br>
+<% end %>
