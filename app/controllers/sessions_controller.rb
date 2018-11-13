@@ -1,30 +1,23 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
       # ensure user is activated before they can log in
-      if user.activated?
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
-      else
-        message  = "Account not activated. "
-        message += "Check your email for the activation link."
-        flash[:warning] = message
-        redirect_to root_url
-      end
+      session[:user_id] = user.id.to_s
+      redirect_to '/', notice: "Gr8 JoB you're logged in!"
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      flash.now.alert = 'Invalid email/password combination, try again'
+      render :new
     end
   end
 
   def destroy
-  log_out if logged_in? # only log out if a user is currently logged in
-    redirect_to root_url
+    session.delete(:user_id)
+    redirect_to login_path, notice: "Logged OUT!"
   end
 
 end

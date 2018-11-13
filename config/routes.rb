@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'pages/secret'
   root 'homes#index'
   get    '/help',    to: 'homes#help'
   get    '/about',   to: 'homes#about'
   get    '/contact', to: 'homes#contact'
-  get    '/signup',  to: 'users#new'
+  get    '/signup',  to: 'users#new', as: :new_user
   post   '/signup',  to: 'users#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

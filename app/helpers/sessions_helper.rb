@@ -1,9 +1,9 @@
 module SessionsHelper
 
-  #login user:
-  def log_in(user)
-    session[:user_id] = user.id
-  end
+  # #login user:
+  # def log_in(user)
+  #   session[:user_id] = user.id
+  # end
   #temp cookies created using #session meth are auto encrypted=> secure code!
 
     # Remembers a user in a saved session

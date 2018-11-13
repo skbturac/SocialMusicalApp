@@ -11,15 +11,19 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <br><br><br>
-    <div class="container">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
+    
+<hr>
+<!-- any flash messages go here -->
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+
+    <% if alert %>
+      <%= alert %>
+    <% end %>
 
       <%= yield %>
 
-    </div>
 
   </body>
 </html>

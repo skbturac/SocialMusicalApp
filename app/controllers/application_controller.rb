@@ -1,14 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-include SessionsHelper
+  include SessionsHelper
 
-private
 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
+
+
+    # redirects user to login page if not logged in
+  def authorize
+    redirect_to login_path, alert: 'Sorry- you need to be logged in to access this page.' if current_user.nil?
+  end
+
+
 end
