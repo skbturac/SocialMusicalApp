@@ -16,7 +16,18 @@
           <%= @user.comments %>
         </ol>
         <% end %>
-        
+
+
+<% @user.posts.each do |p| %>
+<h3><u>Mood</u>:  <%= p.title %></h3>
+  <br>
+<%= p.content %>
+<hr>
+<ul>
+  <%= p.comments %>
+
+</ul>
+<% end %>
 
  <br>
 <p> <%= link_to "Go Back", users_path %> </p>

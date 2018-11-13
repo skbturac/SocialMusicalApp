@@ -1,4 +1,5 @@
-<%= form_for @comment do |f| %>
+
+<%= form_for [@post, @comment] do |f| %>
   Post Title: <%= f.collection_select :post_id, Post.all, :id, :title %><br>
     <br>
   Enter Your Comment:<br>
@@ -9,4 +10,6 @@
     <br>
     <br>
   <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+
+
+<!-- I think we should do a nested form to allow for someone to write their name? Either whatever they want or a username, bc we can't ask a user for their ID -->
