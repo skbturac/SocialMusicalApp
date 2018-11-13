@@ -2,7 +2,7 @@
 
 <p>Number of Users: <%= @users.count %></p>
 
-<body>
+
   <% @users.each do |a| %> <br>
   Name: <%= a.name %> <br>
   <br>
@@ -13,4 +13,3 @@
   <br>
   <% end %>
     <p> <%= link_to "Add New User", new_user_path %> </p>
-</body>
