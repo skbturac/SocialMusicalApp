@@ -13,8 +13,16 @@ class CommentsController < ApplicationController
     end
 
     def create
-      @comment = Comment.create(comment_params)
-      redirect_to @comment
+      @post = Post.find_by(id: params[:id])
+      @comment = @post.comments.build(comment_params)
+      @comment.user = current_user
+      if @comment.save
+        flash[:notice] = "Successfully created..."
+       redirect_to user_path(@user)
+      else
+       flash[:alert] = "failed"
+       redirect_to root_path
+      end
     end
 
     def edit
@@ -22,14 +30,16 @@ class CommentsController < ApplicationController
     end
 
     def update
-      @comment.update(comment_params)
-      redirect_to @comment
-    end
+      if @comment.update
+       flash[:notice] = "You updated your comment"
+      else
+       flash[:alert] = "Failed to update"
+     end
 
-    def destroy
+     def destroy
       @comment.destroy
-      redirect_to comments_path
-    end
+      redirect_to '/'
+     end
 
     private
 
@@ -38,6 +48,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:text, :user_id, :post_id)
+      params.require(:comment).permit(:comment, :text, :user_id, :post_id)
     end
 end

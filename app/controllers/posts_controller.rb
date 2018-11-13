@@ -13,8 +13,15 @@ class PostsController < ApplicationController
     end
 
     def create
-      @post = Post.create(post_params)
-      redirect_to @post
+      @post = Post.new(post_params)
+      @post.user = current_user
+      if @post.save!
+        flash[:notice] = "Successfully created..."
+        redirect_to posts_path
+      else
+        flash[:danger] = "failed to add a post"
+        render 'new'
+      end
     end
 
     def edit
@@ -22,14 +29,24 @@ class PostsController < ApplicationController
     end
 
     def update
-      @post.update(post_params)
-      redirect_to @post
-    end
+       if @post.update
+         flash[:notice] = "Successfully updated"
+         redirect_to post_path
+       else
+         flash[:alert] = "Failed to update Post"
+         redirect_to :back
+       end
+     end
 
-    def destroy
-      @post.destroy
-      redirect_to posts_path
-    end
+     def destroy
+       if @post.destroy
+         flash[:notice] = "Successfully delete"
+         redirect_to posts_path
+       else
+         flash[:danger] = "Wasn't able to delete Blog post."
+         redirect_to :back
+       end
+     end
 
     private
 
