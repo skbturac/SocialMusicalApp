@@ -11,13 +11,20 @@
   <br>
   <br>
   <% @current_user.posts.each do |p| %>
-  Post's Title:  <%= p.title %>
+  <h2><u><%= p.title %></u></h2>
+
+  <h4>IN MY FEELINGS, LIKE ...</h4>
+  <button><%= link_to "Play Me", p.song_file, class: "html5" %></button>
+
+
+  <br><br>
+  <h4><%= p.content %></h4>
+  <%= link_to "click to REACKT", p %>
   <br>
   <br>
-  Post's Content: <br>
-  <%= p.content %><br>
-  <br>
-  <br>
+  <hr>
+
+
   Comments: <br>
   <% p.comments.each do |comment| %>
   <ul>

@@ -1,12 +1,14 @@
 <h1>Post</h1>
-
-<body>
+<br><br>
+<h3>IN MY FEELINGS, LIKE ...</h3>
+<button><%= link_to "Play Me", @post.song_file, class: "html5" %></button>
+<br><br>
   Title: <%=@post.title%> <br>
   <br>
   Content: <%=@post.content%> <br>
   <br>
   <%= render partial: 'comments/form', locals: { comment: @comment } %>
-</body>
+
  <br>
 <p> <%= link_to "Go Back", posts_path %> </p>
 <p> <%= link_to "Edit Post", edit_post_path %> </p>

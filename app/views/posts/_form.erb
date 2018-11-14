@@ -5,12 +5,16 @@
   <br>
   <br>
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   <br>
   <br>
-    <%= f.collection_select(:user_id, User.all, :id, :name) %>
-    <%= @current_user.name %>
-  <br>
-  <br>
+
+
+    <%= f.label 'Audio File:' %>
+    <%= f.file_field :song_file %>
+
+    <br>
+    <br>
+
     <%= f.submit %>
   <% end %>
