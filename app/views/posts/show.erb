@@ -2,7 +2,7 @@
 <br><br>
 <h3>IN MY FEELINGS, LIKE ...</h3>
 <% if @post.song_file.attached? %>
-<button><%= link_to "Play Me", @post.song_file, class: "html5" %></button>
+  <audio controls src="<%= url_for p.song_file %>"></audio>
 <% end %>
 <br><br>
   Title: <%=@post.title%> <br>
