@@ -1,0 +1,21 @@
+<h1>My Profile</h1>
+  Name: <%= @current_user.name %> <br>
+<br>
+  Email Address: <%= @current_user.email %> <br>
+  <br>
+  <br>
+  <% @current_user.posts.each do |p| %>
+  Post's Title:  <%= p.title %>
+<br>
+<br>
+  Post's Content: <br>
+  <%= p.content %>
+  <% end %>
+  <%= @current_user.post %>
+<br>
+<br>
+<br>
+<br>
+
+<p> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </p>
+<p> <%= link_to "Delete My Profile", @current_user, method: :delete, data: {confirm: "Really?"} %> </p>

@@ -1,24 +1,18 @@
-<h1>User Profile</h1>
-
-
+<h1><%= @user.name %>'s Profile</h1>
   Name: <%= @user.name %> <br>
-  <br>
+<br>
   Email Address: <%= @user.email %> <br>
   <br>
-  <h1>
-
-<% @user.posts.each do |p| %>
-<h3><u>Mood</u>:  <%= p.title %></h3>
   <br>
-<%= p.content %>
-<hr>
-<ul>
-  <%= p.comments %>
-
-</ul>
-<% end %>
-
- <br>
+  <% @user.posts.each do |p| %>
+  Post's Title:  <%= p.title %>
+<br>
+<br>
+  Post's Content: <br>
+  <%= p.content %>
+  <% end %>
+<br>
+<br>
+<br>
+<br>
 <p> <%= link_to "Go Back", users_path %> </p>
-<p> <%= link_to "Edit User", edit_user_path %> </p>
-<p> <%= link_to "Delete User Profile", @user, method: :delete, data: {confirm: "Really?"} %> </p>

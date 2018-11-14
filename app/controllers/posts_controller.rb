@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:show]
 
     def index
       @posts = Post.all
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
       @post = @user.posts.find(params[:id])
       @comment = @post.comments.new
     end
+
 
     def new
       @post = Post.new

@@ -3,7 +3,7 @@
 User: <%= link_to @comment.user.name, @comment.user %>
 
   <br><br>
-
+ 
   <br><br>
   (this dates the comment)
   <hr>
@@ -25,6 +25,6 @@ User: <%= link_to @comment.user.name, @comment.user %>
   <h4>Post:</h4><br><%= @comment.post.content %><br>
 
  <br>
-<p> <%= link_to "Go Back", comments_path %> </p>
+<p> <%= link_to "Go Back", post_comments_path %> </p>
 <p> <%= link_to "Edit Comment", edit_comment_path %> </p>
 <p> <%= link_to "Delete Comment", @comment, method: :delete, data: {confirm: "Really?"} %> </p>
