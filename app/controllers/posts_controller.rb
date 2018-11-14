@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :current_user, only: [:show]
+  before_action :current_user, only: [:show, :new]
 
     def index
       @posts = Post.all

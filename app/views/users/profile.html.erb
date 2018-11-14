@@ -1,19 +1,22 @@
 <h1>My Profile</h1>
   Name: <%= @current_user.name %> <br>
-<br>
+  <br>
   Email Address: <%= @current_user.email %> <br>
   <br>
   <br>
   <% @current_user.posts.each do |p| %>
   Post's Title:  <%= p.title %>
-<br>
-<br>
+  <br>
+  <br>
   Post's Content: <br>
   <%= p.content %>
   <% end %>
-  <%= @current_user.post %>
-<br>
-<br>
+  <br>
+  <br>
+  Comments: <br>
+  <br>
+
+
 <br>
 <br>
 
