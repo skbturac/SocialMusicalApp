@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       # ensure user is activated before they can log in
       session[:user_id] = user.id.to_s
-      redirect_to '/', notice: "Gr8 JoB you're logged in!"
+      redirect_to profile_path, notice: "Gr8 JoB you're logged in!"
     else
       flash.now.alert = 'Invalid email/password combination, try again'
       render :new

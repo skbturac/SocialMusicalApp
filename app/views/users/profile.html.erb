@@ -4,6 +4,12 @@
   Email Address: <%= @current_user.email %> <br>
   <br>
   <br>
+
+
+<h3><%= link_to "Post Somethin", new_post_path %></h3>
+
+  <br>
+  <br>
   <% @current_user.posts.each do |p| %>
   Post's Title:  <%= p.title %>
   <br>
