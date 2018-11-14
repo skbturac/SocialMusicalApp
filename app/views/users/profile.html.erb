@@ -10,11 +10,15 @@
   <br>
   Post's Content: <br>
   <%= p.content %>
+  <% p.comments.each do |comment| %>
+  <%= comment.text %>
+  <% end %>
   <% end %>
   <br>
   <br>
   Comments: <br>
   <br>
+
 
 
 <br>
