@@ -8,7 +8,9 @@
         <% if logged_in? %>
         <li><%= link_to "Profile", profile_path %></li>
      <li><%= link_to "POST SOMETHIN", new_post_path %></li>
+       <li><%= link_to "Friends?", users_path %></li> %>
         <li><%= link_to 'Logout', logout_path, method: :delete %><li>
+
 <% else %>
    <li><%= link_to "Sign Up", signup_path %><li>
    <li><%= link_to "Log In", login_path %></li>

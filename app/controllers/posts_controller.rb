@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
     def show
       @user = current_user
+
       @comment = @post.comments.new
     end
 
@@ -20,8 +21,8 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
       @post.user = current_user
       if @post.save!
-        flash[:notice] = "Successfully created..."
-        redirect_to posts_path
+        flash[:notice] = "Successfully created"
+        redirect_to @post
       else
         flash[:danger] = "failed to add a post"
         render 'new'

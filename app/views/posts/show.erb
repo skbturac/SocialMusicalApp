@@ -1,7 +1,9 @@
 <h1>Post</h1>
 <br><br>
 <h3>IN MY FEELINGS, LIKE ...</h3>
+<% if @post.song_file.attached? %>
 <button><%= link_to "Play Me", @post.song_file, class: "html5" %></button>
+<% end %>
 <br><br>
   Title: <%=@post.title%> <br>
   <br>
