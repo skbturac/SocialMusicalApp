@@ -3,6 +3,7 @@
 <p>Number of Posts: <%= @posts.count %></p>
 
 <body>
+
   <% @posts.each do |a| %> <br>
   Title: <%= a.title %> <br>
   <br>
@@ -12,5 +13,6 @@
   -------------------------------------
   <br>
   <% end %>
-    <p> <%= link_to "Add New Post", new_post_path %> </p>
+
+  <p> <%= link_to "Add New Post", new_post_path %> </p>
 </body>

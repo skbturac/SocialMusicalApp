@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:show]
 
     def index
       @posts = Post.all
@@ -8,6 +9,7 @@ class PostsController < ApplicationController
     def show
       @comment = Comment.new
     end
+
 
     def new
       @post = Post.new

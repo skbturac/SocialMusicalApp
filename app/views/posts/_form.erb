@@ -9,6 +9,7 @@
   <br>
   <br>
     <%= f.collection_select(:user_id, User.all, :id, :name) %>
+    <%= @current_user.name %>
   <br>
   <br>
     <%= f.submit %>
