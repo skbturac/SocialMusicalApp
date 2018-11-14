@@ -14,7 +14,9 @@
   <h2><u><%= p.title %></u></h2>
 
   <h4>IN MY FEELINGS, LIKE ...</h4>
+  <% if p.song_file.attached? %>
   <button><%= link_to "Play Me", p.song_file, class: "html5" %></button>
+  <% end %> 
 
 
   <br><br>
