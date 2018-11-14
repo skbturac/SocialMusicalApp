@@ -7,16 +7,16 @@ class UsersController < ApplicationController
     end
 
     def show
-      # do we want to show every single users and let everyone be able to see that?
-      # or should we only show the @CURRENT_USER's page?
+      
     end
 
     def profile
-       
+
     end
 
     def new
       @user = User.new
+
     end
 
     def create

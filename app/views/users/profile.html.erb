@@ -15,18 +15,20 @@
   <br>
   <br>
   Post's Content: <br>
-  <%= p.content %>
-  <% p.comments.each do |comment| %>
-  <%= comment.text %>
-  <% end %>
-  <% end %>
+  <%= p.content %><br>
   <br>
   <br>
   Comments: <br>
+  <% p.comments.each do |comment| %>
+  <ul>
+      <li><%= comment.text %></li>
+  </ul>
+
+  <% end %>
+  <% end %>
   <br>
-
-
-
+  <br>
+  <!-- <%# render partial: 'comments/form', locals: { comment: @comment } %> -->
 <br>
 <br>
 
