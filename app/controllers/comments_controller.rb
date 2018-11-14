@@ -17,10 +17,10 @@ class CommentsController < ApplicationController
     end
 
     def create
+      @user = current_user
+      @post = @user.posts.find_by(id: params[:post_id])
 
-      @post = Post.find_by(id: params[:post_id])
-
-      @comment = @post.comments.build(comment_params)
+      @comment = @post.comments.create(comment_params)
 
       @comment.user = current_user
       if @comment.save
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 
     def edit
       @post = Post.find_by(id: params[:post_id])
-      @comment = @post.comments.find(id: params[:id])
+      @comment = @post.comments.find(id: params[:id]).user
     end
 
     def update
