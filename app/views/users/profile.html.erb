@@ -1,4 +1,5 @@
 <h1>My Profile</h1>
+
   Name: <%= @current_user.name %> <br>
   <br>
   Email Address: <%= @current_user.email %> <br>
@@ -15,8 +16,8 @@
 
   <h4>IN MY FEELINGS, LIKE ...</h4>
   <% if p.song_file.attached? %>
-  <button><%= link_to "Play Me", p.song_file, class: "html5" %></button>
-  <% end %> 
+  <audio controls src="<%= url_for p.song_file %>"></audio>
+  <% end %>
 
 
   <br><br>
