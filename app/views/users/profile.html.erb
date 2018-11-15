@@ -1,11 +1,16 @@
 <h1>My Profile</h1>
 
+<% if @current_user.image.attached? %>
+<img src="<%= url_for @current_user.image %>"></img>
+<% end %>
+<br>
   Name: <%= @current_user.name %> <br>
   <br>
   Email Address: <%= @current_user.email %> <br>
   <br>
   <br>
 
+<h4><%= render 'profile_pic' %></h4>
 
 <h3><%= link_to "Post Somethin", new_post_path %></h3>
 
@@ -31,6 +36,7 @@
   Comments: <br>
   <% p.comments.each do |comment| %>
   <ul>
+    <%# <%= p.user.name %> %>
       <li><%= comment.text %></li>
   </ul><br>
   <% end %>

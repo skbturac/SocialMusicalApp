@@ -1,7 +1,7 @@
 
 
 <%= form_for [@post, @comment] do |f| %>
-  Post Title: <%= f.collection_select :post_id, Post.all, :id, :title %><br>
+  Post Title: <%= @post.title %><br>
     <br>
   Enter Your Comment:<br>
   <%= f.text_area :text, placeholder: "Compose new comment..." %><br>

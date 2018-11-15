@@ -1,0 +1,7 @@
+<%= form_for @current_user do |f| %>
+    <%= f.label 'Add A Profile Pic:' %>
+    <%= f.file_field :image %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
