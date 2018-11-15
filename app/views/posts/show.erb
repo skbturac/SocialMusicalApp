@@ -12,6 +12,6 @@
   <%= render partial: 'comments/form', locals: { comment: @comment } %>
 
  <br>
-<p> <%= link_to "Go Back", posts_path %> </p>
+<p> <%= link_to "Go Back", posts_path, %> </p>
 <p> <%= link_to "Edit Post", edit_post_path %> </p>
 <p> <%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Really?"} %> </p>
