@@ -2,14 +2,26 @@
 
 <p>Number of Users: <%= @users.count %></p>
 
+<% @users.each do |u| %>
+<div class="ui items index">
 
-  <% @users.each do |a| %> <br>
-  Name: <%= a.name %> <br>
-  <br>
-  Email: <%= a.email %><br>
-  <br>
-  <%= link_to "View the User", user_path(a) %><br>
-  -------------------------------------
-  <br>
+  <div class="item">
+    <div class="image">
+      <% if u.image.attached? %>
+      <img src="<%= url_for u.image %>">
+      <% else %>
+      <img src="empty.png">
+      <% end %>
+    </div>
+    <div class="content">
+      <a class="header"><%= link_to "#{u.name}", user_path(u) %></a>
+      <div class="meta">
+        <span>Description</span>
+      </div>
+      <div class="description">
+        <p><%= u.name %></p>
+    </div>
+  </div>
+</div>
+<hr>
   <% end %>
-    <p> <%= link_to "Add New User", new_user_path %> </p>
