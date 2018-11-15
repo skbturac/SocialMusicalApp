@@ -10,7 +10,8 @@
   Content: <%=@post.content%> <br>
   <br>
   <% @post.comments.each do |x| %>
-  <%= x.text %>
+  COMMENT: <br><%= x.text %> <br>
+  by: <%= @user.name %>
   <br>
   <% end %>
   <br>

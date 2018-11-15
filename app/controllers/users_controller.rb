@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      
+
       @comments = Comment.all
     end
 
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :song_file)
     end
 
 

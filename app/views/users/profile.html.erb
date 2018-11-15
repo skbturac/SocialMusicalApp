@@ -54,9 +54,11 @@
     <% end %>
 
     <% @user.comments.each do |comment| %>
-    <%= comment.text %>
-    <%= @user.name %>
+    <br>
+    <%= comment.text %><br>
+    by: <%= @user.name %>
     <% end %>
+
 <br>
 <br>
 
