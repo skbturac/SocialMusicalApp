@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
     end
 
     def new
-
       @comment = Comment.create(post_id: params[:post_id])
     end
 
@@ -21,6 +20,7 @@ class CommentsController < ApplicationController
        redirect_to post_path(@comment.post)
       else
        flash[:alert] = "failed because #{@comment.errors.full_messages.first}"
+       redirect_to post_path(@comment.post)
        redirect_to post_path
       end
     end

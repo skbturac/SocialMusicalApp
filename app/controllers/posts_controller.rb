@@ -8,10 +8,8 @@ class PostsController < ApplicationController
 
     def show
       @user = current_user
-      # @post = @user.posts.find(params[:id])
       @comment = @post.comments.new(user: current_user)
     end
-
 
     def new
       @post = Post.new
@@ -30,7 +28,6 @@ class PostsController < ApplicationController
     end
 
     def edit
-      #code
     end
 
     def update

@@ -19,6 +19,15 @@
   <br>
   <br>
   <% end %>
+
+<%= render partial: 'posts/posts', collection: @users, as: :post %>
+
+  <% @user.posts.each do |p| %>
+   <br>
+   <% p.comments.each do |c| %>
+<%= c.text %>
+   <% end %>
+   <% end %>
 <br>
 <br>
 <br>

@@ -8,21 +8,21 @@ class UsersController < ApplicationController
     end
 
     def show
-
+      @comments = Comment.all
     end
 
     def profile
       @post = Post.new
+      # @comments = Comment.all
+      # @user = current_user
     end
 
     def new
       @user = User.new
-
     end
 
     def create
       @user = User.new(user_params)
-
       @user.email.downcase!
 
       if @user.save
@@ -35,7 +35,6 @@ class UsersController < ApplicationController
     end
 
     def edit
-      #code
     end
 
     def update
@@ -61,9 +60,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :song_file)
     end
-
-
 
 end  # /> class
