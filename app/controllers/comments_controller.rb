@@ -10,20 +10,18 @@ class CommentsController < ApplicationController
     end
 
     def new
-    
+
       @comment = Comment.create(post_id: params[:post_id])
     end
 
     def create
-      @post = @user.posts.find_by(id: params[:post_id])
-      @comment.user_id = current_user.id
-      @comment = @post.comments.create(comment_params)
+    @comment = current_user.comments.new(comment_params)
       if @comment.save
         flash[:notice] = "Successfully created..."
-       redirect_to user_post_path(current_user)
+       redirect_to post_path(@comment.post)
       else
-       flash[:alert] = "failed"
-       redirect_to root_path
+       flash[:alert] = "failed because #{@comment.errors.full_messages.first}"
+       redirect_to post_path
       end
     end
 
