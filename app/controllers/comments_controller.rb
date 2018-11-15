@@ -10,22 +10,17 @@ class CommentsController < ApplicationController
     end
 
     def new
-      # @comment = Comment.new
-      # @post = Post.find_by(id: params[:id])
-      # @comment = Comment.new(id: params[:id])
+    
       @comment = Comment.create(post_id: params[:post_id])
     end
 
     def create
-      @user = current_user
       @post = @user.posts.find_by(id: params[:post_id])
-
+      @comment.user_id = current_user.id
       @comment = @post.comments.create(comment_params)
-
-      @comment.user = current_user
       if @comment.save
         flash[:notice] = "Successfully created..."
-       redirect_to user_path(current_user)
+       redirect_to user_post_path(current_user)
       else
        flash[:alert] = "failed"
        redirect_to root_path
@@ -46,7 +41,9 @@ class CommentsController < ApplicationController
     end
 
      def destroy
+       @comment = @post.comments.find(params[:id])
       @comment.destroy
+      flash[:success] = "Comment deleted :("
       redirect_to '/'
      end
 
