@@ -36,7 +36,6 @@
   Comments: <br>
   <% p.comments.each do |comment| %>
   <ul>
-    <%# <%= p.user.name %> %>
       <li><%= comment.text %></li>
   </ul><br>
   <% end %>
@@ -47,7 +46,7 @@
   <% end %>
   <br>
   <br>
-  <!-- <%# render partial: 'comments/form', locals: { comment: @comment } %> -->
+  <%# <% render partial: 'comments/form', locals: { comment: @comment } %>
 <br>
 <br>
 
