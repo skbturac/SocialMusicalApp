@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <h1>My Profile</h1>
 
 <% if @current_user.image.attached? %>
@@ -32,7 +32,11 @@
    <% end %>
   <br>
   <br>
+<<<<<<< HEAD
     <% @post.comments.each do |p| %>
+=======
+    <% p.comments.each do |comment| %>
+>>>>>>> skb
   <div class="ui comments">
     <h3 class="ui dividing header">Comments</h3>
     <div class="comment">
@@ -44,7 +48,11 @@
           <span class="date"><%= time_ago_in_words(Time.now) %></span>
         </div>
         <div class="text">
+<<<<<<< HEAD
           <%= p.comments.text %>
+=======
+          <%= comment.text %>
+>>>>>>> skb
         </div>
         <div class="actions">
           <a class="reply">Reply</a>
@@ -53,6 +61,7 @@
     </div>
      </div>
     <% end %>
+<<<<<<< HEAD
 <br>
 <br>
 
@@ -110,5 +119,7 @@
 
     </div>
   </div>
-</div>
+=======
+  <% end %>
 >>>>>>> skb
+</div>

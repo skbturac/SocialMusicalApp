@@ -7,11 +7,6 @@ body {
     margin: 0 auto;
 }
 
-.index {
-
-}
-
-
 #post-image {
   height: 60px;
   width: 60px;
@@ -22,6 +17,27 @@ body {
 #profilepic {
   height: 30px;
   width: 30px;
+}
 
+body > .grid {
+  height: 100%;
+}
 
+.image {
+  margin-top: -100px;
+}
+
+.column {
+  max-width: 450px;
+}
+
+#login-box {
+  top: -50px;
+}
+#profilepage {
+
+}
+
+.wrapper {
+    width: 1500px;
 }
