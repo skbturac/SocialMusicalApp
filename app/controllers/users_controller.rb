@@ -8,11 +8,14 @@ class UsersController < ApplicationController
     end
 
     def show
-
+      
+      @comments = Comment.all
     end
 
     def profile
       @post = Post.new
+      @comments = Comment.all
+      @user = current_user
     end
 
     def new

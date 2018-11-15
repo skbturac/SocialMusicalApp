@@ -9,6 +9,11 @@
   <br>
   Content: <%=@post.content%> <br>
   <br>
+  <% @post.comments.each do |x| %>
+  <%= x.text %>
+  <br>
+  <% end %>
+  <br>
   <%= render partial: 'comments/form', locals: { comment: @comment } %>
 
  <br>

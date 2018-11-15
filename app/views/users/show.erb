@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Profile</h1>
 <% if @user.image.attached? %>
-<img src="<%= url_for @user.image %>"></audio>
+<img src="<%= url_for @user.image %>">
 <% end %>
   Name: <%= @user.name %> <br>
 <br>
@@ -19,6 +19,12 @@
   <br>
   <br>
   <% end %>
+
+  <% @user.comments.each do |comment| %>
+  <%= comment.text %>
+  <%= @user.name %>
+  <% end %>
+
 <br>
 <br>
 <br>

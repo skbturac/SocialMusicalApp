@@ -52,6 +52,11 @@
     </div>
      </div>
     <% end %>
+
+    <% @user.comments.each do |comment| %>
+    <%= comment.text %>
+    <%= @user.name %>
+    <% end %>
 <br>
 <br>
 
