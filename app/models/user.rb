@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_one_attached :image
-  has_one_attached :song_file
+
 
 
   attr_accessor :remember_token

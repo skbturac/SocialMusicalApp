@@ -21,11 +21,10 @@
   <% end %>
 
   <% @user.posts.each do |p| %>
-
    <br>
-   <%= p.comments %>
-   <%# end %>
-   <%= @user.name %>
+   <% p.comments.each do |c| %>
+<%= c.text %>
+   <% end %>
    <% end %>
 <%#= render partial: 'posts/posts', locals: { post: @post } %>
 <br>
