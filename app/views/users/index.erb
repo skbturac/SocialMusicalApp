@@ -1,6 +1,28 @@
 <h1>Users Index</h1>
+<p>Number of FRIENDS: <%= @friends.count %></p>
+<table cellspacing="20">
+  <tr>
+    <th>Username</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <%@friends.each do |u|%>
+  <tr>
+    <td><%=link_to u.username, u%></td>
+    <td><%=u.to_s%></td>
+    <td><%=link_to "Unfriend", friends_path(friend_id: u.id), method: :delete %></td>
+    <%end%>
+  </tr>
+</table>
 
-<p>Number of Users: <%= @users.count %></p>
+<h3>Add More Friends</h3>
+
+<%= form_tag(friends_path, method: "post") do %>
+  <%= collection_check_boxes(:user, :friend_ids, @nonfriends, :id, :username_with_full_name)%>
+  <%= submit_tag("Add Friends")%>
+<%end%>
+
+<!-- <p>Number of FRIENDS: <%= @friends.count %></p>
 
 
   <% @users.each do |a| %> <br>
@@ -8,7 +30,7 @@
   <br>
   Email: <%= a.email %><br>
   <br>
-  <%= link_to "View the User", user_path(a) %><br>
+  <%= link_to "View the User", user_path(a) %><br> -->
   -------------------------------------
   <br>
   <% end %>

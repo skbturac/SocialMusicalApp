@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       # @comment = Comment.new
       # @post = Post.find_by(id: params[:id])
       # @comment = Comment.new(id: params[:id])
-      @comment = Comment.create(post_id: params[:post_id])
+      @comment = Comment.new(post_id: params[:post_id])
     end
 
     def create

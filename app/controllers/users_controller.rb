@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:profile]
+  skip_before_action :authorized, only: [:new, :create]
 
 
     def index
+      @friends = current_user.friends
+@nonfriends = User.all - @friends
       @users = User.all
     end
 

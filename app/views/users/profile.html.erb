@@ -50,5 +50,10 @@
 <br>
 <br>
 
+
+<% if @user.friends.include?(current_user) %>
+FRIENDS! /checkmark here\
+<p><%= link_to "UNFRIEND", friends_path %></p>
+
 <p> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </p>
 <p> <%= link_to "Delete My Profile", @current_user, method: :delete, data: {confirm: "Really?"} %> </p>

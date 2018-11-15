@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
+  before_action :authorized
 
   helper_method :current_user
 
@@ -10,8 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
 
+
     # redirects user to login page if not logged in
-  def authorize
+  def authorized
     redirect_to login_path, alert: 'Sorry- you need to be logged in to access this page.' if current_user.nil?
   end
 

@@ -6,6 +6,16 @@
 <br>
   Email Address: <%= @user.email %> <br>
   <br>
+
+  <%if @user.friends.include?(current_user)%>
+  You're friends!
+  <p><%=link_to "Unfriend", friends_path(friend_id: @user.id), method: :delete %><p>
+  <br><br>
+  <%elsif @user != current_user && @user.friends.exclude?(current_user)%>
+  <p><%=link_to "Become Friends", friends_path(friend_id: @user.id), method: :post %><p>
+  <%end%>
+
+  <br>
   <br>
   <% @user.posts.each do |p| %>
   Title:  <u><%= link_to "#{p.title}", p %></u>

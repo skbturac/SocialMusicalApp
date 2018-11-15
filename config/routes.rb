@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'pages/secret'
+  post '/friends', to: 'friendships#create'
+  delete '/friends', to: 'friendships#destroy'
+
   root 'homes#index'
   get    '/help',    to: 'homes#help'
   get    '/about',   to: 'homes#about'
