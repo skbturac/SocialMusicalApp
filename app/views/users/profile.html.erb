@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>My Profile</h1>
 
 <% if @current_user.image.attached? %>
@@ -56,3 +57,57 @@
 
 <p> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </p>
 <p> <%= link_to "Delete My Profile", @current_user, method: :delete, data: {confirm: "Really?"} %> </p>
+=======
+<div class="ui four column doubling stackable grid container">
+  <div class="ui internally celled grid">
+
+      <div class="three wide column">
+        <h1>My Profile</h1>
+        <%= image_tag "girlb.png"%>
+        <br>
+        <br>
+        <p><%= @current_user.name %></p>
+        <p><%= @current_user.email %></p>
+      </div>
+
+      <div class="ten wide column">
+        <div class="ui feed">
+        <% @current_user.posts.each do |p| %>
+
+        <p>
+          <h2>
+            <u><%= p.title %></u>
+          </h2>
+        </p>
+
+        <p>
+          <% if p.song_file.attached? %>
+          <button><%= link_to "Play Me", p.song_file, class: "html5" %></button>
+          <% end %>
+        </p>
+
+        <p>
+          <h3><%= p.content %></h3>
+        </p>
+
+        </div>
+        <% p.comments.each do |comment| %>
+        <div class="ui left aligned container">
+          <p><%= comment.text %>
+          <% end %></p>
+        </div>
+        <%= link_to "Enter a new Comment", p, class: "ui inverted blue button"%> <br>
+        <% end %>
+      </div>
+
+      <div class="three wide column">
+        <p><%= link_to image_tag("music.png", alt: "music", id: "post-image"), new_post_path %></p>
+        <p>Click to Post Your Music</p>
+        <p> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </p>
+        <p> <%= link_to "Delete My Profile", @current_user, method: :delete, data: {confirm: "Really?"} %> </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+>>>>>>> skb
