@@ -15,5 +15,4 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, alert: 'Sorry- you need to be logged in to access this page.' if current_user.nil?
   end
 
-
 end
