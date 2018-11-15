@@ -1,30 +1,14 @@
-<!-- THIS IS BASICALLY A USER'S PERSONAL HISTORY OF EVERYTHING -->
-
-User: <%= link_to @comment.user.name, @comment.user %>
-
-  <br><br>
- 
-  <br><br>
-  (this dates the comment)
-  <hr>
-  <div>
-    Posted <%= time_ago_in_words(@comment.created_at) %> ago.
-    <!-- below is if we choose to give access only if user is logged in -->
-    <% if current_user?(@comment.user) %>
-      <%= link_to "delete", @comment, method: :delete,
-                  data: { confirm: "You sure?" } %>
-    <% end %>
-
-<!-- the comments THIS USER made -->
-  <h3>Comment: "<%=@comment.text%>"</h3> <br>
-  <br><br>
-<hr>
-<br><br>
-<!-- the posts THIS USER has made, and link to them -->
-  <h4>Post Title:</h4> <%= link_to @comment.post.title, post_path %><br>
-  <h4>Post:</h4><br><%= @comment.post.content %><br>
-
+<body>
+  Text: <%=@comment.text%> <br>
+  <br>
+  User ID: <%=@comment.user_id%> <br>
+  User Name: <%= link_to @comment.user.name, user_path %><br>
+  <br>
+  Post ID: <%=@comment.post_id%> <br>
+  Post Title: <%= link_to @comment.post.title, post_path %><br>
+  Post Content: <%= @comment.post.content %><br>
+</body>
  <br>
-<p> <%= link_to "Go Back", post_comments_path %> </p>
+<p> <%= link_to "Go Back", comments_path %> </p>
 <p> <%= link_to "Edit Comment", edit_comment_path %> </p>
 <p> <%= link_to "Delete Comment", @comment, method: :delete, data: {confirm: "Really?"} %> </p>

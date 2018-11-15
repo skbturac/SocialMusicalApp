@@ -29,29 +29,30 @@
   <br><br>
   <h4><%= p.content %></h4>
   <%= link_to "click to REACKT", p %>
+   <% end %>
   <br>
   <br>
-    <% p.comments.each do %>
+    <% @post.comments.each do |p| %>
   <div class="ui comments">
     <h3 class="ui dividing header">Comments</h3>
     <div class="comment">
       <a class="avatar">
       </a>
       <div class="content">
-        <a class="author">(user)</a>
+        <a class="author">p.user.name</a>
         <div class="metadata">
           <span class="date"><%= time_ago_in_words(Time.now) %></span>
         </div>
         <div class="text">
-          <%= p.comments %>
+          <%= p.comments.text %>
         </div>
         <div class="actions">
           <a class="reply">Reply</a>
         </div>
       </div>
     </div>
+     </div>
     <% end %>
-  <% end %>
 <br>
 <br>
 

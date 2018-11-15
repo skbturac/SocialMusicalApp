@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def profile
-
+      @post = Post.new
     end
 
     def new
