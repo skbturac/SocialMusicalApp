@@ -1,21 +1,23 @@
+<div class="ui inverted vertical masthead center aligned segment">
 
-<h1>"<em>bla bla..</em> pithy catchphrase" &trade;</h1>
-<p>Lorem ipsum …</p>
-<h1>Welcome to Some SocMedia Site</h1>
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <%= render 'shared/navbar', class: "sidebar icon" %>
+        <div class="right item">
+          <%= link_to "Login here", login_path, class: "ui inverted button" %>
+        </div>
+      </div>
+    </div>
 
-<h2>
-  whatup
-</h2>
-<br>
-<div align="center">
-  <%= link_to "Login here", login_path, class: "btn btn-lg btn-primary" %>
-<br><br>
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Tune In
+      </h1>
+      <h2>Welcome to Tune-In</h2>
+      <%= link_to "Sign up now!", signup_path, class: "ui huge primary button" %>
+    </div>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
-<br>
-<div align="center">
-  <%= image_tag("teddybear.jpg") %>
-<br>
-  placeholder
-</div>
+  </div>

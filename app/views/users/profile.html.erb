@@ -32,11 +32,8 @@
    <% end %>
   <br>
   <br>
-<<<<<<< HEAD
-    <% @post.comments.each do |p| %>
-=======
+  <% @post.comments.each do |p| %>
     <% p.comments.each do |comment| %>
->>>>>>> skb
   <div class="ui comments">
     <h3 class="ui dividing header">Comments</h3>
     <div class="comment">
@@ -48,11 +45,8 @@
           <span class="date"><%= time_ago_in_words(Time.now) %></span>
         </div>
         <div class="text">
-<<<<<<< HEAD
           <%= p.comments.text %>
-=======
           <%= comment.text %>
->>>>>>> skb
         </div>
         <div class="actions">
           <a class="reply">Reply</a>
@@ -61,13 +55,7 @@
     </div>
      </div>
     <% end %>
-<<<<<<< HEAD
-<br>
-<br>
 
-<p> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </p>
-<p> <%= link_to "Delete My Profile", @current_user, method: :delete, data: {confirm: "Really?"} %> </p>
-=======
 <div class="ui four column doubling stackable grid container">
   <div class="ui internally celled grid">
 
@@ -119,7 +107,5 @@
 
     </div>
   </div>
-=======
   <% end %>
->>>>>>> skb
 </div>
