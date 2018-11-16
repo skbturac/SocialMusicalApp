@@ -11,18 +11,14 @@
       <div class="text">
         <%= @comment.text %>
       </div>
-      <div class="actions">
-        <a class="reply active">Reply</a>
-      </div>
+
       <div class="ui reply form">
         <%= form_for [@post, Comment.new] do |f| %>
         <div class="field">
             <%= f.text_area :text, placeholder: "Compose new comment..." %>
         </div>
         <%= f.hidden_field :post_id, value: @post.id %>
-        <div class="ui primary submit labeled icon button">
-          <i class="icon edit">  <%= f.submit %></i> Add Reply
-        </div>
+        <%= f.submit class: "ui primary submit labeled icon button"%>
 
         <% end %>
       </div>

@@ -5,16 +5,14 @@
   <audio controls src="<%= url_for @post.song_file %>"></audio>
 <% end %>
 <br><br>
-  Title: <%=@post.title%> <br>
-  <br>
-  Content: <%=@post.content%> <br>
+  <h4><u>MOOD</u>:     <em><%=@post.title%></em></h4> <br>
+   <%=@post.content%> <br>
   <br>
 
   <% @post.comments.each do |x| %>
-    by: <%= @user.name %>
-    <br>
+    <h5><%= @user.name %> says:</h5>
   <p>
-  COMMENT: <%= x.text %> <br>
+  <h4>COMMENT:</h4><br><%= x.text %> <br>
   <% end %>
 
   <%= render partial: 'comments/form', locals: { comment: @comment } %>
