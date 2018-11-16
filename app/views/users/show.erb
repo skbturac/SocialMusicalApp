@@ -10,15 +10,15 @@
       <% if @user.image.attached? %>
       <img src="<%= url_for @user.image %>", class="img-rounded" alt="<%= @user.name %>"></audio>
       <% end %>
-        Name: <%= @user.name %> <br>
+        <h4 class="abril">Name: <%= @user.name %> </h4><br>
       <br>
         Email Address: <%= @user.email %>
     </div>
 
-    <div align="center" class="col-sm-5">
+    <div align="center" class="col-sm-5 ubuntu white">
       <p></p>
       <p></p>
-      <h4><small>RECENT POSTS</small></h4>
+      <h4 class="white">RECENT POSTS</h4>
       <hr>
       <% @user.posts.each do |p| %>
       Title:  <u><%= link_to "#{p.title}", p %></u>

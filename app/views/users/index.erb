@@ -1,10 +1,10 @@
-<h1>Users Index</h1>
+<h1 style="color:yellow;">Users Index</h1>
 
-<p>Number of Users: <%= @users.count %></p>
+<p style="color: white;">Number of Users: <%= @users.count %></p>
 
 <% @users.each do |u| %>
 
-<div class="media" style="width:60%; margin: 0 30px;">
+<div class="media white" style="width:60%; margin: 0 30px;">
     <div class="media-left">
       <% if u.image.attached? %>
       <img src="<%= url_for u.image %>", class="img-rounded media-object" style="width:60px" alt="<%= u.name %>">
@@ -14,7 +14,7 @@
     </div>
     <div class="media-body">
       <h4 class="media-heading"><%= u.name %></h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p style="color: yellow;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <br>
     </div>
     <%= link_to 'View Profile', user_path(u), class: "button btn btn-info" %>

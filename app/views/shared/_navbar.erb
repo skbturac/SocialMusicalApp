@@ -1,7 +1,8 @@
-<div class="ui stackable menu">
+<div class="navbar ui stackable menu">
   <div class="item">
     <%= image_tag "headphones.png" %>
   </div>
+
   <%= link_to "Home", root_path, class: "item" %>
   <%= link_to "Help", help_path, class: "item" %>
   <% if logged_in? %>
