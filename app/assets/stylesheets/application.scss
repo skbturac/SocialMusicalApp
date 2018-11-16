@@ -2,6 +2,16 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ // font-family: 'Abril Fatface', cursive;
+ // font-family: 'Lato', sans-serif;
+ // font-family: 'PT Serif', serif;
+ // font-family: 'PT Serif Caption', serif;
+ // font-family: 'Ubuntu', sans-serif;
+ // font-family: 'Ubuntu Condensed', sans-serif;
+ // font-family: 'Vollkorn', serif;
+ // font-family: 'Vollkorn SC', serif;
+
+
 body {
 	background: #348A96;
   margin: 0 auto;
@@ -136,7 +146,7 @@ body > .grid {
     display: -ms-flexbox;
     display: flex;
     margin: 1rem 0;
-    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
     background: #E74C3C;
     font-weight: 400;
     border: 1px solid rgba(34,36,38,.15);
