@@ -20,18 +20,20 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+  <%= render 'shared/navbar' %>
 
 <!-- any flash messages go here -->
-    <% if notice %>
-      <%= notice %>
-    <% end %>
+<% flash.each do |type, message| %>
+  <div class="alert <%= bootstrap_class_for(type) %> alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= message %>
+  </div>
+<% end %>
 
-    <% if alert %>
-      <%= alert %>
-    <% end %>
+  <%= yield %>
+</div>
 
-      <%= yield %>
+
 
 
   </body>

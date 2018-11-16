@@ -11,6 +11,7 @@
   <br>
 
   <% @post.comments.each do |x| %>
+  <p>
   COMMENT: <br><%= x.text %> <br>
   by: <%= @user.name %>
   <br>
@@ -20,5 +21,5 @@
 
  <br>
 <p> <%= link_to "Go Back", posts_path %> </p>
-<p> <%= link_to "Edit Post", edit_post_path %> </p>
+<p> <%= link_to "Edit Post", edit_post_path(@post) %> </p>
 <p> <%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Really?"} %> </p>

@@ -11,14 +11,15 @@
   <br>
 
   <% @post.comments.each do |x| %>
-  COMMENT: <br><%= x.text %> <br>
-  by: <%= @user.name %>
-  <br>
+    by: <%= @user.name %>
+    <br>
+  <p>
+  COMMENT: <%= x.text %> <br>
   <% end %>
 
   <%= render partial: 'comments/form', locals: { comment: @comment } %>
 
  <br>
 <p> <%= link_to "Go Back", posts_path %> </p>
-<p> <%= link_to "Edit Post", edit_post_path %> </p>
-<p> <%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Really?"} %> </p>
+<%= link_to "Edit Post", edit_post_path(@post), class: "button btn btn-warning" %>   ||
+<%= link_to "Delete Post", post_path(@post.id), method: :delete, data: {confirm: "Really?"}, class: "button btn btn-danger" %>

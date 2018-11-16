@@ -6,6 +6,7 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
 
+
     def show
       @user = current_user
       @comment = @post.comments.new(user: current_user)
@@ -32,17 +33,17 @@ class PostsController < ApplicationController
 
     def update
        if @post.update
-         flash[:notice] = "Successfully updated"
+         flash[:success] = "Successfully updated"
          redirect_to post_path
        else
-         flash[:alert] = "Failed to update Post"
+         flash[:error] = "Failed to update Post"
          redirect_to :back
        end
      end
 
      def destroy
        if @post.destroy
-         flash[:notice] = "Successfully delete"
+         flash[:alert] = "Successfully deleted"
          redirect_to posts_path
        else
          flash[:danger] = "Wasn't able to delete Blog post."

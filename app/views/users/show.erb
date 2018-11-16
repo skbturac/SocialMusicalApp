@@ -1,35 +1,41 @@
-<h1><%= @user.name %>'s Profile</h1>
-<% if @user.image.attached? %>
-<img src="<%= url_for @user.image %>"></audio>
-<% end %>
-  Name: <%= @user.name %> <br>
-<br>
-  Email Address: <%= @user.email %> <br>
-  <br>
-  <br>
-  <% @user.posts.each do |p| %>
-  Title:  <u><%= link_to "#{p.title}", p %></u>
-<br>
-<br>
-  Content: <br>
-  <%= p.content %><br>
 
-  <%= link_to "REACKKTIONS?", p %>
-  <br>
-  <br>
-  <br>
-  <% end %>
+<%# <p> <%= link_to "Go Back", users_path %>
 
-<%= render partial: 'posts/posts', collection: @users, as: :post %>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-4 sidenav">
+      <p></p>
+      <p></p>
+      <h1><%= @user.name %>'s Profile</h1>
+      <% if @user.image.attached? %>
+      <img src="<%= url_for @user.image %>", class="img-rounded" alt="<%= @user.name></audio>
+      <% end %>
+        Name: <%= @user.name %> <br>
+      <br>
+        Email Address: <%= @user.email %>
+    </div>
 
-  <% @user.posts.each do |p| %>
-   <br>
-   <% p.comments.each do |c| %>
-<%= c.text %>
-   <% end %>
-   <% end %>
-<br>
-<br>
-<br>
-<br>
-<p> <%= link_to "Go Back", users_path %> </p>
+    <div align="center" class="col-sm-5">
+      <p></p>
+      <p></p>
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <% @user.posts.each do |p| %>
+      Title:  <u><%= link_to "#{p.title}", p %></u>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <p>  <h4>MOOD: </h4>
+        <% if p.song_file.attached? %>
+        <audio controls src="<%= url_for p.song_file %>"></audio>
+        <% end %>
+
+                <br><br>
+                <h4><%= p.content %></h4>
+                <%= link_to "COMMENTS!", p, class: "button btn btn-primary btn-md" %>
+                <hr>
+                 <% end %></p>
+      <br><br>
+
+
+    </div>
+  </div>
+</div>

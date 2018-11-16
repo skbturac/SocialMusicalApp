@@ -2,4 +2,5 @@
 
 <%= render 'form' %>
 
-<p> <%= link_to "Go Back", posts_path %> </p>
+<p> <%= link_to "Delete Post", post_path(@post.id), method: :delete, data: {confirm: "Really?"} %>   ||
+<%= link_to "Go Back", posts_path %> </p>

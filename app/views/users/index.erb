@@ -3,25 +3,24 @@
 <p>Number of Users: <%= @users.count %></p>
 
 <% @users.each do |u| %>
-<div class="ui items index">
 
-  <div class="item">
-    <div class="image">
+<div class="media" style="width:60%; margin: 0 30px;">
+    <div class="media-left">
       <% if u.image.attached? %>
-      <img src="<%= url_for u.image %>">
+      <img src="<%= url_for u.image %>", class="img-rounded media-object" style="width:60px" alt="<%= u.name %>">
       <% else %>
       <img src="empty.png">
       <% end %>
     </div>
-    <div class="content">
-      <a class="header"><%= link_to "#{u.name}", user_path(u) %></a>
-      <div class="meta">
-        <span>Description</span>
-      </div>
-      <div class="description">
-        <p><%= u.name %></p>
+    <div class="media-body">
+      <h4 class="media-heading"><%= u.name %></h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <br>
     </div>
+    <%= link_to 'View Profile', user_path(u), class: "button btn btn-info" %>
   </div>
-</div>
+  <br>
 <hr>
   <% end %>
+
+  <hr>

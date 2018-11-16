@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     def create
     @comment = current_user.comments.new(comment_params)
       if @comment.save
-        flash[:notice] = "Successfully created..."
+        flash[:success] = "Successfully created..."
        redirect_to post_path(@comment.post)
       else
        flash[:alert] = "failed because #{@comment.errors.full_messages.first}"
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
      def destroy
        @comment = @post.comments.find(params[:id])
       @comment.destroy
-      flash[:success] = "Comment deleted :("
+      flash[:alert] = "Comment deleted :("
       redirect_to '/'
      end
 
