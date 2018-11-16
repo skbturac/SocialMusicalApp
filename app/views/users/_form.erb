@@ -1,29 +1,7 @@
+<body>
 
-<form class="ui form" method="POST" action="/signup">
-  <%= form_for(@user, url: signup_path) do |f| %>
-    <div class="field">
-      <%= render 'shared/errors', object: f.object %>
-      <label>Name</label>
-      <input type="text" name="name" placeholder="Name">
-    </div>
-    <div class="field">
-      <label>Email</label>
-      <input type="text" name="email" placeholder="Email">
-    </div>
-    <div class="field">
-      <label>Password</label>
-      <input type="text" name="password" placeholder="Password">
-    </div>
-    <div class="field">
-      <label>Confirm Password</label>
-      <input type="text" name="password_confirmation" placeholder="Confirm Password">
-    </div>
-    <button class="ui orange button" type="submit">Submit</button>
-    <% end %>
-</form>
-
-
-<div class="row">
+<div class="form-style-8" >
+  <h2>Create Your Profile</h2>
   <div class="ui form">
 
     <%= form_for(@user, url: signup_path) do |f| %>

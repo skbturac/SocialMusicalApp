@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         flash[:success] = "YOU DID IT! WELCOME!"
         redirect_to '/'
       else
-        flash.now.alert = "Uh Oh! We couldn't create your account :( Please make sure you're entering a valid email and password before trying again!"
+      
         render :new
       end
     end
