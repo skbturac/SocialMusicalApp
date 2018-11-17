@@ -14,7 +14,8 @@
     </div>
     <div class="media-body">
       <h4 class="media-heading"><%= u.name %></h4>
-      <p style="color: yellow;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      <p style="color: yellow;"><%= u.bio %></p>
       <br>
     </div>
     <%= link_to 'View Profile', user_path(u), class: "button btn btn-info" %>

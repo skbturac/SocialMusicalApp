@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-4 sidenav ">
+    <div class="col-sm-4 sidenav">
       <p></p>
       <p></p>
       <h1>My Profile</h1>
 
           <% if @current_user.image.attached? %>
-          <img src="<%= url_for @current_user.image %>",  class="img-rounded" alt="<%= @current_user.name %>"></img>
+          <img src="<%= url_for @current_user.image %>",  class="img-rounded profile" alt="<%= @current_user.name %>">
         <% else %>
           <%= image_tag "girlb.png"%>
           <% end %>
@@ -15,7 +15,8 @@
             <br>
             Email Address: <%= @current_user.email %> <br>
             <br>
-            <br>
+            <h4>A bit about me...</h4>
+            <p><%= @current_user.bio %></p>
 
           <h4><%= render 'profile_pic' %></h4>
 

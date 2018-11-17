@@ -8,7 +8,7 @@
       <p></p>
       <h1><%= @user.name %>'s Profile</h1>
       <% if @user.image.attached? %>
-      <img src="<%= url_for @user.image %>", class="img-rounded" alt="<%= @user.name %>"></audio>
+      <img src="<%= url_for @user.image %>", class="img-rounded profile" alt="<%= @user.name %>"></audio>
       <% end %>
         <h4 class="abril">Name: <%= @user.name %> </h4><br>
       <br>

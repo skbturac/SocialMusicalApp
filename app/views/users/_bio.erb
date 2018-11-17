@@ -1,0 +1,7 @@
+<%= form_for @current_user do |f| %>
+    <%= f.label 'Update Your Bio:' %>
+    <%= f.text_area :bio %>
+    <br>
+    <br>
+    <%= f.submit "INTRODUCE URSELF", class: 'btn btn-success' %>
+  <% end %>
