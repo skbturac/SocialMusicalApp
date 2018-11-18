@@ -6,10 +6,10 @@
       <h1>My Profile</h1>
 
           <% if @current_user.image.attached? %>
-          <img src="<%= url_for @current_user.image %>",  class="img-rounded profile" alt="<%= @current_user.name %>">
-        <% else %>
-          <%= image_tag "girlb.png"%>
-          <% end %>
+      <img src="<%= url_for @current_user.image %>", class="img-rounded profile" alt="<%= @current_user.name %>", style="width:220px;height:220px;"></audio>
+      <% else %>
+      <img src="https://i.pinimg.com/originals/cb/80/cc/cb80cc8aed218910fc3e42163f891798.jpg", class="img-rounded media-object" style="width:200px;height:200px;" alt="i gotta face for radio">
+      <% end %>
           <br><br>
             Name: <%= @current_user.name %> <br>
             <br>
@@ -36,7 +36,7 @@
       <hr>
       <% @current_user.posts.each do |p| %>
       <h2><u><%= p.title %></u></h2>
-      <h5><span class="glyphicon glyphicon-time"></span> Post by <%= p.user %></h5>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by <%= p.user.name %>,  <%= time_ago_in_words(p.created_at)%> ago</h5>
       <p>  <h4>MOOD ...</h4>
         <% if p.song_file.attached? %>
         <audio controls src="<%= url_for p.song_file %>"></audio>

@@ -8,9 +8,9 @@
       <p></p>
       <h1><%= @user.name %>'s Profile</h1>
       <% if @user.image.attached? %>
-      <img src="<%= url_for @user.image %>", class="img-rounded profile" alt="<%= @user.name %>", style="width:250px;height:250px;"></audio>
+      <img src="<%= url_for @user.image %>", class="img-rounded profile" alt="<%= @user.name %>", style="width:220px;height:220px;"></audio>
       <% else %>
-      <img src="https://i.pinimg.com/originals/cb/80/cc/cb80cc8aed218910fc3e42163f891798.jpg", class="img-rounded media-object" style="width:250px;height:250px;" alt="i gotta face for radio">
+      <img src="https://i.pinimg.com/originals/cb/80/cc/cb80cc8aed218910fc3e42163f891798.jpg", class="img-rounded media-object" style="width:200px;height:200px;" alt="i gotta face for radio">
       <% end %>
         <h4 class="abril">Name: <%= @user.name %> </h4><br>
       <br>
