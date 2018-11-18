@@ -8,7 +8,9 @@
       <p></p>
       <h1><%= @user.name %>'s Profile</h1>
       <% if @user.image.attached? %>
-      <img src="<%= url_for @user.image %>", class="img-rounded profile" alt="<%= @user.name %>"></audio>
+      <img src="<%= url_for @user.image %>", class="img-rounded profile" alt="<%= @user.name %>", style="width:250px;height:250px;"></audio>
+      <% else %>
+      <img src="https://i.pinimg.com/originals/cb/80/cc/cb80cc8aed218910fc3e42163f891798.jpg", class="img-rounded media-object" style="width:250px;height:250px;" alt="i gotta face for radio">
       <% end %>
         <h4 class="abril">Name: <%= @user.name %> </h4><br>
       <br>
@@ -18,14 +20,14 @@
         <p><%= @user.bio %></p>
     </div>
 
-    <div align="center" class="col-sm-5 ubuntu white">
+    <div align="center" class="col-sm-5 ubuntu white" style="padding:5em;">
       <p></p>
       <p></p>
       <h4 class="white">RECENT POSTS</h4>
       <hr>
       <% @user.posts.each do |p| %>
       Title:  <u><%= link_to "#{p.title}", p %></u>
-      <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by <%= p.user.name %>, Sep 27, 2015.</h5>
       <p>  <h4>MOOD: </h4>
         <% if p.song_file.attached? %>
         <audio controls src="<%= url_for p.song_file %>"></audio>

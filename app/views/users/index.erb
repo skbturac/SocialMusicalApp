@@ -4,12 +4,12 @@
 
 <% @users.each do |u| %>
 
-<div class="media white" style="width:60%; margin: 0 30px;">
+<div class="media white" style="width:90%; margin: 0 30px;">
     <div class="media-left">
       <% if u.image.attached? %>
-      <img src="<%= url_for u.image %>", class="img-rounded media-object" style="width:60px" alt="<%= u.name %>">
+      <img src="<%= url_for u.image %>", class="img-rounded media-object" style="width:110px;height:110px;" alt="<%= u.name %>">
       <% else %>
-      <img src="empty.png">
+      <img src="https://i.pinimg.com/originals/cb/80/cc/cb80cc8aed218910fc3e42163f891798.jpg", class="img-rounded media-object" style="width:110px;height:110px;" alt="<%= u.name %>">
       <% end %>
     </div>
     <div class="media-body">
@@ -18,6 +18,8 @@
       <p style="color: yellow;"><%= u.bio %></p>
       <br>
     </div>
+
+    <br>
     <%= link_to 'View Profile', user_path(u), class: "button btn btn-info" %>
   </div>
   <br>
