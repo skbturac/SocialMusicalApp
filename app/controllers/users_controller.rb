@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:profile]
+  before_action :save_login_state, :only => [:new, :create]
 
 
     def index
